@@ -1,0 +1,28 @@
+<%- include('navbar')%>
+<body>
+    <div class="text-center F1 font30 padding-bt padding-t bold">MVC Test Of Computer Science KMITL</div>
+    <div class="form-group">
+        <div class="text-center padding-t" >
+          <a type="submit" class="btn btn-primary" href="/addImformation">เพิ่มข้อเสนอแนะ</a>
+        </div>
+        <div class="text-center padding-t" >
+            <a type="submit" class="btn btn-success" href="/manage">จัดการข้อมูล(ADMIN)</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-3">
+            <% Object.values(data).forEach(function(item){%>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="/<%= item._id%>"></a>
+                    <div class="card-body">
+                        <h4 class="card-text text-center"><%= item.suggestion%> </h4>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    
+</body>
+</html>
